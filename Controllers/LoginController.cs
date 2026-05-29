@@ -31,11 +31,19 @@ namespace Bibliotec_MVC_DEV.Controllers
                 HttpContext.Session.SetString("UsuarioId" , usuario.Id.ToString());
                 HttpContext.Session.SetString("Admin", usuario.TipoBib.ToString());
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Livro");
             }
             //mensagem vinda daqui!!!!!!
             ViewBag.Erro = "Usuário ou senha inválido";
             return View("Index");
+        }
+
+        [HttpPost]
+
+        public IActionResult Deslogar()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction ("Index");
         }
 
     }

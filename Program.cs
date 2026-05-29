@@ -23,6 +23,8 @@ builder.Services.AddSession( options => {
 
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>(); //primeiro a interface depois o repositorio
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
+builder.Services.AddScoped<ILivroRepository, LivroRepository>();
+builder.Services.AddScoped<ILivroService, LivroService>();
 
 
 var app = builder.Build();
